@@ -4,8 +4,9 @@ public class Task7 {
     private final static Byte BINARY_RADIX = 2;
 
     public Long rotateLeft(Long number, Integer shift) {
-        if (shift < 0)
+        if (shift < 0) {
             return rotateRight(number, -shift);
+        }
         char[] numBits = Long.toString(number, BINARY_RADIX).toCharArray();
         int realShift = shift % numBits.length;
         charArrayHalvesSwap(numBits, realShift);
@@ -13,8 +14,9 @@ public class Task7 {
     }
 
     public Long rotateRight(Long number, Integer shift) {
-        if (shift < 0)
+        if (shift < 0) {
             return rotateLeft(number, -shift);
+        }
         char[] numBits = Long.toString(number, BINARY_RADIX).toCharArray();
         int realShift = shift % numBits.length;
         charArrayHalvesSwap(numBits, numBits.length - realShift);
